@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Q4 Seatwork 2</title>
+	<style>
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+  			background-image: url('https://i.pinimg.com/564x/a0/64/d3/a064d387c5cdee2a812ffb5e49661d42.jpg');
+  			background-repeat: no-repeat;
+  			background-size: cover;
+  			background-position: center;
+			}
+		h1, p {
+			font-family: 'Roboto Slab', serif;
+			font-size: 24px;
+			font-weight: bold;
+			text-align: center;
+			}
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: left;
+			margin-top: 20px;
+			}
+		input[type="text"] {
+			width: 200px;
+			height: 30px;
+			margin-right: 5px;
+			padding: 5px;
+			border-radius: 5px;
+			border: 1px solid gray;
+			}
+		button {
+			width: 80px;
+			height: 40px;
+			font-size: 16px;
+			font-weight: bold;
+			background-color: skyblue;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			}
+		table {
+			margin: auto;
+			margin-top: 20px;
+			border-collapse: collapse;
+			width: 80%;
+			}
+		th, td {
+			padding: 8px;
+			text-align: center;
+			border: 1px solid black;
+			font-family: 'Itim', cursive;
+			font-size: 18px;
+			}
+		th {
+			background-color: skyblue;
+			color: white;
+			font-family: 'Ysabeau', sans-serif;
+			font-size: 20px;
+			}
+		#DT {
+		font-family: 'Roboto Slab', serif;
+		font-size: 28px;
+		text-align: center;
+		color: black;
+		margin-top: 20px;
+			}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Temperature Conversion</h1>
+	</header>
+	<table>
+      <tr>
+        <th>Fahrenheit</th>
+        <th>Celsius</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>32</td>
+        <td>0</td>
+        <td>Freezing point of the water</td>
+      </tr>
+      <tr>
+        <td>212</td>
+        <td>100</td>
+        <td>Boiling point of water</td>
+      </tr>
+      <tr>
+        <td>-40</td>
+        <td>-40</td>
+        <td>same temperature in both Celsisu and Fahrenheit</td>
+      </tr>
+	</table>
+	<table>
+      <tr>
+        <th>Kelvin</th>
+        <th>Celsius</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>273.15</td>
+        <td>0</td>
+        <td>Freezing point of the water</td>
+      </tr>
+      <tr>
+        <td>373.15</td>
+        <td>100</td>
+        <td>Boiling point of water</td>
+      </tr>
+      <tr>
+        <td>233.15</td>
+        <td>-40</td>
+        <td>same temperature in both Kelvin and Celsius</td>
+      </tr>
+	</table>
+	<form>
+		<label for="num1">Enter Fahrenheit temperature:</label><br>
+		<input type="text" id="num1" required><br>
+		<button type="submit" onclick="convertTemp()">Convert</button><br>
+	<label for="num2">Enter Kelvin temperature:</label><br>
+	<input type="text" id="num2" required><br>
+	<button type="submit" onclick="convertTemp2()">Convert</button><br>
+
+		<button onclick="showDateTime()">Date and Time</button>
+		<p id="DT"></p>
+	</form>
+	<p id="result"></p>
+
+	<script>
+		function showDateTime() {
+	const D = new Date();
+	document.getElementById('DT').innerHTML = D;
+}
+		const D = new Date();
+		document.getElementById('DT').innerHTML = D;
+		function convertTemp() {
+   		 const num1 = document.getElementById("num1").value;
+    	const celsius = (Number(num1) - 32) * 5 / 9;
+    	window.alert("The measurement of Fahrenheit in Celsius is: " + celsius);
+}
+
+		function convertTemp2() {
+    	const num2 = document.getElementById("num2").value;
+    	const celsius = Number(num2) - 273.15;
+    	window.alert("The measurement of Kelvin in Celsius is: " + celsius);
+}
+
+	</script>
+
+
+</body>
+</html>
